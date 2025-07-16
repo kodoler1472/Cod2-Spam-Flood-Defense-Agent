@@ -1,0 +1,21 @@
+Readme.txt
+Title: CoD2 Connection Sanitizer & Flood Defense Agent
+
+Description:
+
+This tool is a silent background agent designed to defend against unauthorized or spoofed player connection attempts targeting Call of Duty 2 servers. It specifically identifies and mitigates fake clients that use crafted getchallenge and connect packets to simulate real players, often used in server flooding or disruption attacks.
+
+Key capabilities include:
+
+Protocol-Level Inspection: Monitors UDP traffic on known CoD2 server ports and analyzes incoming getchallenge and connect sequences to determine authenticity.
+
+Rate-Limiting Engine: Automatically delays or drops excessive or malformed requests that mimic legitimate player behavior but occur at unnatural speeds or in high volumes.
+
+Spoof Detection: Flags connections that use randomized GUIDs, fake hardware strings, or abnormal name patterns (e.g., mass connection from @flooded_user# bots).
+
+Registry & Process Monitoring: Detects unauthorized persistence mechanisms often used by malicious executables (such as self-copying to %APPDATA% and writing to the Run registry key), and removes or quarantines them safely.
+
+Server Integrity Mode: Optionally integrates with the server to enforce a challenge-response verification before allowing player join events, ensuring only proper clients are processed.
+
+This agent is ideal for administrators running public or private CoD2 servers who want to maintain stable uptime, minimize spoofed players, and prevent UDP-level flooding without affecting real clients.
+main
